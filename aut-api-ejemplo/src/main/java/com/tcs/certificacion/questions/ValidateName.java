@@ -5,7 +5,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-public class ValidateString implements Question<String> {
+public class ValidateName implements Question<String> {
 
 
 
@@ -15,7 +15,7 @@ public class ValidateString implements Question<String> {
         return dataUserObjectFromApi.getName();
     }
 
-    public static ValidateString validateName(){
-        return new ValidateString();
+    public static ValidateName validateName(){
+        return new ValidateName();
     }
 }

@@ -32,7 +32,7 @@ public class GetGenderByNameStepDefinitions {
 
     @Then("Name response returns the name {string} given to the service")
     public void nameResponseReturnsTheNameGivenToTheService(String name ) {
-        theActorInTheSpotlight().should(seeThat(ValidateString.validateName(), Matchers.equalTo(name)));
+        theActorInTheSpotlight().should(seeThat(ValidateName.validateName(), Matchers.equalTo(name)));
     }
 
     @Then("Probability response returns a percentage between 0 and 1")
