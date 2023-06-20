@@ -1,7 +1,8 @@
-Feature: Get gender by name
-  Scenario Outline: Query gender by name and validate various conditions
+Feature: Post by name and country
+
+  Scenario Outline: Query gender by name and country
     #Given I can query the genderize api
-    When I query the genderize api with name "<name>"
+    When I query the genderize api with name "<name>" and country "<country>"
     Then I get a response with status code <status_code>
     And Gender response only returns male or female
     And Name response returns the name "<name>" given to the service
@@ -9,7 +10,8 @@ Feature: Get gender by name
     And Count response returns a positive number
 
     Examples:
-      | name    | status_code |
-      | john    | 200         |
-      | jane    | 200         |
-      | unknown | 200         |
+      | name  | country | status_code |
+      | John  | US      | 200         |
+      | Peter | ES      | 200         |
+      | Lucia | FR      | 200         |
+
