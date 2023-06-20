@@ -2,22 +2,18 @@ package com.tcs.certificacion.stepdefinitions;
 
 import com.tcs.certificacion.questions.*;
 import com.tcs.certificacion.tasks.GetGender;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.rest.SerenityRest;
-import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import org.hamcrest.Matchers;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class GetGenderByNameStepDefinitions {
-    @Given("I can query the genderize api")
-    public void iCanQueryTheGenderizeApi() {
-        theActorInTheSpotlight().whoCan(CallAnApi.at("https://api.genderize.io"));
-    }
+//    @Given("I can query the genderize api")
+//    public void iCanQueryTheGenderizeApi() {
+//        theActorInTheSpotlight().whoCan(CallAnApi.at("https://api.genderize.io"));
+//    }
 
     @When("I query the genderize api with name {string}")
     public void iQueryTheGenderizeApiWithNameJohn(String name) {
@@ -35,8 +31,8 @@ public class GetGenderByNameStepDefinitions {
     }
 
     @Then("Name response returns the name {string} given to the service")
-    public void nameResponseReturnsTheNameGivenToTheService(String name) {
-        theActorInTheSpotlight().should(seeThat(ValidateName.validateName(), Matchers.equalTo(name)));
+    public void nameResponseReturnsTheNameGivenToTheService(String name ) {
+        theActorInTheSpotlight().should(seeThat(ValidateString.validateName(), Matchers.equalTo(name)));
     }
 
     @Then("Probability response returns a percentage between 0 and 1")
